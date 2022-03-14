@@ -46,15 +46,24 @@ const App = () => {
     }
   };
 
-  /* place holder for now */
-  const connectWallet = async () => {};
+  /* This will prompt to connect to the Phantom Wallet*/
+  const connectWallet = async () => {
+    const { solana } = window; // check for phantom wallet
+
+    if (solana) { // if phantom wallet exists
+      const response = await solana.connect();
+      console.log('Connected with Public Key:', response.publicKey.toString());
+      setWalletAddress(response.publicKey.toString());
+    }
+  };
 
   /* rendering UI when user has not connected their wallet */
   const renderNotConnectedContainer = () => (
     <button
       className="cta-button connect-wallet-button"
       onClick={connectWallet}
-    > Connect to Wallet
+    >
+    Connect to Wallet
     </button>
   );
 
@@ -73,11 +82,10 @@ const App = () => {
   // This renders the front end
   return (
     <div className="App">
-    {/* make things fancy*/}
-    <div className={walletAddress ? 'authed-container' : 'container'}>
-      <div className="container">
+      {/* make things fancy*/}
+      <div className={walletAddress ? 'authed-container' : 'container'}>
         <div className="header-container">
-          <p className="header">🖼 GIF Portal</p>
+          <p className="header">🖼 My GIF Portal</p>
           <p className="sub-text">
             View your GIF collection in the metaverse ✨
           </p>
