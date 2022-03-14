@@ -11,7 +11,7 @@ To get started with this course, clone this repo and follow these commands:
 This project is for me to learn how to properly work with Phantom Wallet and the Solana Blockchain
 
 ### TODO:
-[x] Get Starter project downloaded, built, and running
-[x] Check for Phantom Wallet
-[x] Render "Connect Button" UI
-[] Connect Phantom Wallet 
+- [x] Get Starter project downloaded, built, and running
+- [x] Check for Phantom Wallet
+- [x] Render "Connect Button" UI
+- [x] Connect Phantom Wallet
